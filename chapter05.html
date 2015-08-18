@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function() {
+            if (!document.getElementsByTagName) return false;
+            var lnks = document.getElementsByTagName("a");
+            for (var i=0; i<lnks.length; i++) {
+                if (lnks[i].getAttribute("class") == "popup") {
+                    lnks[i].onclick = function() {
+                        popUp(this.getAttribute("href"));
+                        return false;
+                    }
+                }
+            }
+        };
+        function popUp(url)
+        {
+            window.open(url,"popup","width=320,height=480");
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:popUp('http://www.baidu.com')">Example</a>
+
+    <a href="http://baidu.com/" class="popup">Example</a>
+
+</body>
+</html>
